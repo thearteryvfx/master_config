@@ -120,9 +120,9 @@ keys:
 paths:
 
 
-    shot_root: sequences/{Sequence}/{Shot}/{Step}
-    asset_root: assets/{sg_asset_type}/{Asset}/{Step}
-    sequence_root: sequences/{Sequence}
+    shot_root: ./{Sequence}/{Shot}/{Step}
+    asset_root: all_job/asset/{sg_asset_type}/{Asset}/{Step}
+    sequence_root: ./{Sequence}
 
     ##########################################################################################
     # Project level paths

@@ -27,7 +27,7 @@ includes:
 
 launch_3dsmax:
   defer_keyword: ''
-  engine: tk-3dsmax
+  engine: tk-3dsmaxplus
   extra: {}
   hook_app_launch: default
   hook_before_app_launch: default
@@ -143,6 +143,7 @@ launch_houdini:
   versions: []
   windows_args: ''
   windows_path: '@houdini_windows'
+  
   
 launch_mari:
   defer_keyword: ''
