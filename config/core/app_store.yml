@@ -1,0 +1,9 @@
+# Shotgun Pipeline Toolkit configuration file
+# this file was automatically created
+
+host: https://tank.shotgunstudio.com
+api_script: com_shotgunstudio_thearteryvfx
+api_key: 37b5ae5ee063852d06a77d50faf1f3a6303742838a84cce501df4ff63824f73b
+http_proxy: null
+
+# End of file.
