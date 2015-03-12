@@ -32,7 +32,7 @@ maya_linux: maya
 #
 # nuke
 #
-nuke_mac: /Applications/Nuke8.0v5/Nuke8.0v6.app
+nuke_mac: /Applications/Nuke8.0v6/Nuke8.0v6.app
 nuke_windows: 'C:\Program Files\Nuke8.0v6\Nuke8.0.exe'
 nuke_linux: Nuke8.0
 
@@ -64,7 +64,7 @@ photoshop_win: 'C:\Program Files\Adobe\Adobe Photoshop CC (64 Bit)\Photoshop.exe
 photoshop_extras:
     mac_extension_manager_path: /Applications/Adobe Extension Manager CS6/Adobe Extension Manager CC.app
     mac_python_path: /usr/bin/python
-    windows_extension_manager_path: 'C:\Program Files (x86)\Adobe\Adobe Extension Manager CC\XManCommand.exe'
+    windows_extension_manager_path: 'C:\Program Files (x86)\Adobe\Adobe Extension Manager CC\XManCmd.exe'
     windows_python_path: 'C:\Python27\python.exe'
 
 #

@@ -17,7 +17,7 @@ name: "content"
 # the shotgun entity type to connect to
 entity_type: "asset"
 
-create_with_parent: false
+create_with_parent: true
 
 # shotgun filters to apply when getting the list of items
 # this should be a list of dicts, each dict containing 
