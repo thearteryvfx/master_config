@@ -29,8 +29,10 @@
 keys:
     Sequence:
         type: str
+        exclusions: ["all_job"]
     Shot:
         type: str
+        exclusions: ["all_scene"]
     Step:
         type: str
     sg_asset_type:
@@ -57,7 +59,8 @@ keys:
         type: int
     segment_name:
         type: str
-
+    a_type:
+        type: str    
     # Represents the optional output name for frames written by the Shotgun Write Node
     output:
         type: str
