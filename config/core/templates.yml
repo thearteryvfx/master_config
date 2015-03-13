@@ -62,8 +62,13 @@ keys:
         type: int
     segment_name:
         type: str
+    #todo: remove a_type
     a_type:
-        type: str    
+        type: str
+    maya_file_extension:
+        type: str
+        choices: ["ma","mb"]
+
     # Represents the optional output name for frames written by the Shotgun Write Node
     output:
         type: str
@@ -128,10 +133,16 @@ keys:
 #
 
 paths:
+    #original from default
+    #shot_root: sequences/{Sequence}/{Shot}/{Step}
+    #asset_root: assets/{sg_asset_type}/{Asset}/{Step}
+    #sequence_root: sequences/{Sequence}
 
 
-    shot_root: ./{Sequence}/{Shot}/{Step}
-    asset_root: all_job/asset/{sg_asset_type}/{Asset}/{Step}
+    shot_root: ./{Sequence}/{Shot}
+    #shot_root: ./{Sequence}/{Shot}/{Step}
+    asset_root: ./all_job/asset/{sg_asset_type}/{Asset}
+    #asset_root: ./all_job/asset/{sg_asset_type}/{Asset}/{Step}
     sequence_root: ./{Sequence}
 
     ##########################################################################################
@@ -199,13 +210,13 @@ paths:
     shot_publish_area_maya: '@shot_root/asset/3d/maya'
 
     # The location of WIP files
-    maya_shot_work: '@shot_root/work/maya/{Shot}_{name}_my01_v{version}.ma'
+    maya_shot_work: '@shot_root/work/maya/{Shot}_{name}[_{Step}]_v{version}.{maya_file_extension}'
 
     # The location of backups of WIP files
-    maya_shot_snapshot: '@shot_root/work/maya/snapshots/{Shot}_{name}_my01_v{version}_{timestamp}.ma'
+    maya_shot_snapshot: '@shot_root/work/maya/snapshots/{Shot}_{name}[_{Step}]_v{version}_{timestamp}.{maya_file_extension}'
 
     # The location of published maya files
-    maya_shot_publish: '@shot_root/asset/3d/{Shot}_{name}_v{version}.ma'
+    maya_shot_publish: '@shot_root/asset/3d/maya/{Shot}_{name}_v{version}.{maya_file_extension}'
 
 
     #
@@ -239,19 +250,19 @@ paths:
     #
 
     # define the location of a work area
-    shot_work_area_max: '@shot_root/work/3dsmax'
+    shot_work_area_max: '@shot_root/work/max'
 
     # define the location of a publish area
     shot_publish_area_max: '@shot_root/asset/3d/max'
 
     # The location of WIP files
-    max_shot_work: '@shot_root/work/max/{Shot}_{name}_v{version}.max'
+    max_shot_work: '@shot_root/work/max/{Shot}_{name}[_{Step}]_v{version}.max'
 
     # The location of backups of WIP files
-    max_shot_snapshot: '@shot_root/work/max/snapshots/{Shot}_{name}_v{version}_{timestamp}.max'
+    max_shot_snapshot: '@shot_root/work/max/snapshots/{Shot}_{name}[_{Step}]_v{version}_{timestamp}.max'
 
     # The location of published max files
-    max_shot_publish: '@shot_root/asset/3d/max/{Shot}_{name}_v{version}.max'
+    max_shot_publish: '@shot_root/asset/3d/max/{Shot}_{name}[_{Step}]_v{version}.max'
 
 
     #
@@ -281,7 +292,7 @@ paths:
     shot_work_area_nuke: '@shot_root/work/nuke'
 
     # define the location of a publish area
-    shot_publish_area_nuke: '@shot_root/assets/2d/'
+    shot_publish_area_nuke: '@shot_root/assets/2d/nuke'
 
     # The location of WIP script files
     nuke_shot_work: '@shot_root/work/nuke/{Shot}_{name}_v{version}.nk'
