@@ -1,4 +1,6 @@
 
+#note core hooks need to match name of .py in core.
+
 from tank import Hook
 
 

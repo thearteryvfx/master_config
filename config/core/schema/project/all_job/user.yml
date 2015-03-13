@@ -12,7 +12,7 @@
 type: "user_workspace"
 
 # the shotgun field to use for the folder name
-name: "login"
+name: "{firstname}_{surname}"
 
 # the shotgun entity type to connect to
 #entity_type: "asset"

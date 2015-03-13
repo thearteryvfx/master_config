@@ -9,12 +9,12 @@ engines:
       tk-multi-launchflamepremium: '@launch_flame_premium'
       tk-multi-launchflare: '@launch_flare'
       tk-multi-launchhiero: '@launch_hiero'
-      tk-multi-launchmari: '@launch_mari'
+      #tk-multi-launchmari: '@launch_mari'
       tk-multi-launchmaya: '@launch_maya'
-      tk-multi-launchmotionbuilder: '@launch_motionbuilder'
+      #tk-multi-launchmotionbuilder: '@launch_motionbuilder'
       tk-multi-launchnuke: '@launch_nuke'
       tk-multi-launchphotoshop: '@launch_photoshop'
-      tk-multi-launchsoftimage: '@launch_softimage'
+      #tk-multi-launchsoftimage: '@launch_softimage'
       tk-multi-screeningroom: '@launch_screeningroom'
       tk-shotgun-launchfolder:
         deny_permissions: []
