@@ -54,6 +54,7 @@ keys:
     version_two:
         type: int
         format_spec: "02"
+        alias: version
     timestamp:
         type: str
     width:
@@ -181,8 +182,8 @@ paths:
     flame_segment_clip:      '{Sequence}/{Shot}/image/clip/sources/{segment_name}.clip'
     flame_shot_clip:         '{Sequence}/{Shot}/image/clip/{Shot}.clip'
     flame_shot_batch:        '{Sequence}/{Shot}/work/batch/{Shot}.v{version}.batch'
-    flame_shot_render_dpx:   '{Sequence}/{Shot}/image/{Step}/{Shot}_v{version_two}/{segment_name}/{segment_name}_{Shot}.v{version}.{SEQ}.dpx'
-    flame_shot_render_exr:   '{Sequence}/{Shot}/image/{Step}/{Shot}_v{version_two}/{segment_name}/{segment_name}_{Shot}.v{version}.{SEQ}.exr'    
+    flame_shot_render_dpx:   '{Sequence}/{Shot}/image/{Step}/{Shot}_v{version_two}/{segment_name}/{segment_name}_{Shot}.v{version_two}.{SEQ}.dpx'
+    flame_shot_render_exr:   '{Sequence}/{Shot}/image/{Step}/{Shot}_v{version_two}/{segment_name}/{segment_name}_{Shot}.v{version_two}.{SEQ}.exr'    
 
     #
     # Photoshop
@@ -196,8 +197,8 @@ paths:
     photoshop_shot_snapshot: '@shot_root/work/ps/snapshots/{Shot}_{name}_v{version}_{timestamp}.psd'
 
     # The location of published files
-    shot_publish_area_photoshop: '@shot_root/assets/2d'
-    photoshop_shot_publish: '@shot_root/assets/2d/{Shot}_{name}_v{version}.psd'
+    shot_publish_area_photoshop: '@shot_root/asset/2d'
+    photoshop_shot_publish: '@shot_root/asset/2d/{Shot}_{name}_v{version}.psd'
 
     #
     # Maya
@@ -288,11 +289,17 @@ paths:
     # Nuke
     #
 
+    nk_render_path:   '@shot_root/image/[{Step}/]tmp'
+    nk_render_pathname:   '/{Shot}[_{Step}]_{name}_v{version_two}[_{RES}][_{COLOR}]'
+    nk_render_pub_path: '@shot_root/image[/{Step}]'
+
+
+
     # define the location of a work area
     shot_work_area_nuke: '@shot_root/work/nuke'
 
     # define the location of a publish area
-    shot_publish_area_nuke: '@shot_root/assets/2d/nuke'
+    shot_publish_area_nuke: '@shot_root/asset/2d/nuke'
 
     # The location of WIP script files
     nuke_shot_work: '@shot_root/work/nuke/{Shot}_{name}_v{version}.nk'
@@ -301,18 +308,24 @@ paths:
     nuke_shot_snapshot: '@shot_root/work/nuke/snapshots/{Shot}_{name}_v{version}_{timestamp}.nk'
 
     # The location of published nuke script files
-    nuke_shot_publish: '@shot_root/assets/2d/{Shot}_{name}_v{version}.nk'
+    nuke_shot_publish: '@shot_root/asset/2d/nuke/{Shot}_{name}_v{version}.nk'
+
 
     # write node outputs
-    nuke_shot_render_mono_dpx:            '@shot_root/image/{Step}/{Shot}_{name}_v{version_two}/{Shot}_{Step}_{name}_v{version_two}[_{RES}][_{COLOR}].{SEQ}.dpx'
-    nuke_shot_render_pub_mono_dpx:        '@shot_root/image/{Step}/{Shot}_{name}_v{version_two}/{Shot}_{Step}_{name}_v{version_two}.{SEQ}.dpx'
+    nuke_shot_render_jpg:                 '@nk_render_path/@nk_render_pathname/@nk_render_name.{SEQ}.jpg'
+    nuke_shot_render_pub_jpg:             '@nk_render_pub_path/@nk_render_name/@nk_render_name.{SEQ}.jpg'
 
-    nuke_shot_render_stereo:            '@shot_root/work/images/{name}/v{version}/{width}x{height}/{Shot}_{name}_{output}_{eye}_v{version_two}.{SEQ}.exr'
-    nuke_shot_render_pub_stereo:        '@shot_root/publish/elements/{name}/v{version}/{width}x{height}/{Shot}_{name}_{output}_{eye}_v{version_two}.{SEQ}.exr'
+    nuke_shot_render_mono_exr:            '@nk_render_path/@nk_render_pathname/@nk_render_name.{SEQ}.exr'
+    nuke_shot_render_mono_dpx:            '@nk_render_path/@nk_render_pathname/@nk_render_name.{SEQ}.dpx'
+    nuke_shot_render_pub_mono_dpx:        '@nk_render_pub_path/@nk_render_pathname/@nk_render_name.{SEQ}.dpx'
+    nuke_shot_render_mono_mov:            '@nk_render_path/@nk_render_pathname.mov'
+
+    nuke_shot_render_stereo:            '@nk_render_path/@nk_render_name/@nk_render_name_{eye}.{SEQ}.dpx'
+    nuke_shot_render_pub_stereo:        '@nk_render_pub_path/@nk_render_name/@nk_render_name_{eye}.{SEQ}.dpx'
 
     # review output
     shot_quicktime_quick:   '@shot_root/edit/quickdaily/{Shot}_{name}_{iteration}.mov'
-    nuke_shot_render_movie: '@shot_root/edit/{Shot}_{name}_{output}_v{version}.mov'
+    nuke_shot_render_movie: '@shot_root/edit/cuts/from_artery/{Shot}_{name}_v{version}.mov'
 
     #
     # Hiero
@@ -516,6 +529,9 @@ strings:
 
     # when a review version in shotgun is created inside of nuke, this is the
     # name that is being given to it (the code field)
+
+    nk_render_name:   '{Shot}[_{Step}][_{name}]_v{version_two}[_{RES}][_{COLOR}]'
+
     nuke_shot_version_name: "{Shot}_{name}_{output}_v{version}.{iteration}"
     nuke_quick_shot_version_name: "{Shot}_{name}_quick_{iteration}"
 

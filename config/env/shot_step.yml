@@ -546,7 +546,7 @@ engines:
         saveas_prefer_version_up: false
         sg_entity_type_extra_display_fields: {}
         sg_entity_type_filters: {}
-        sg_entity_types: [Shot, Asset]
+        sg_entity_types: [Shot, Asset, Step]
         sg_task_filters: []
         task_extra_display_fields: []
         template_publish: nuke_shot_publish
@@ -562,21 +562,14 @@ engines:
         post_hooks: [snapshot_history_post_quickdaily]
         sg_version_name_template: nuke_quick_shot_version_name
         width: 1024
+
+      # setup write nodes
       tk-nuke-writenode:
         location: {name: tk-nuke-writenode, type: app_store, version: v1.0.13}
         template_script_work: nuke_shot_work
         write_nodes:
         - file_type: exr
-          name: Stereo Exr, 32 bit
-          proxy_publish_template: null
-          proxy_render_template: null
-          publish_template: nuke_shot_render_pub_stereo
-          render_template: nuke_shot_render_stereo
-          settings: {datatype: 32 bit float}
-          tank_type: Rendered Image
-          tile_color: []
-        - file_type: exr
-          name: Stereo Exr, 16 bit
+          name: 'Stereo Exr, 16 bit'
           proxy_publish_template: null
           proxy_render_template: null
           publish_template: nuke_shot_render_pub_stereo
@@ -590,6 +583,15 @@ engines:
           proxy_render_template: null
           publish_template: nuke_shot_render_pub_mono_dpx
           render_template: nuke_shot_render_mono_dpx
+          settings: {}
+          tank_type: Rendered Image
+          tile_color: []
+        - file_type: jpeg
+          name: Jpeg
+          proxy_publish_template: null
+          proxy_render_template: null
+          publish_template: nuke_shot_render_pub_jpg
+          render_template: nuke_shot_render_jpg
           settings: {}
           tank_type: Rendered Image
           tile_color: []
