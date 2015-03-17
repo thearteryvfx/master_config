@@ -586,7 +586,7 @@ engines:
           selected: true, tank_type: Quicktime}
         template_work: nuke_asset_work
       tk-multi-reviewsubmission:
-        location: {name: tk-multi-reviewsubmission, type: app_store, version: v0.1.10}
+        location: {name: tk-multi-reviewsubmission, type: app_store, version: v0.1.11}
         movie_height: 540
         movie_path_template: nuke_asset_render_movie
         movie_width: 1024

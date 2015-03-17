@@ -31,7 +31,7 @@ engines:
     - matches: ['*Fla*']
       name: Finishing Tools
     hook_launch_python: default
-    location: {name: tk-desktop, type: app_store, version: v1.0.8}
+    location: {name: tk-desktop, type: app_store, version: v1.0.9}
     show_recents: true
   tk-flame: '@std_flame_flare'
   tk-flare: '@std_flame_flare'

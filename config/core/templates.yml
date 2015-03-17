@@ -162,8 +162,8 @@ paths:
     hiero_project_snapshot: 'all_job/work/hiero/snapshots/{name}_v{version}_{timestamp}.hrox'
 
     # The location of published hiero files
-    hiero_project_publish: 'all_job/asset/2d/{name}_v{version}.hrox'
-    hiero_project_publish_area: 'all_job/asset/2d/'
+    hiero_project_publish: 'all_job/asset/2d/hiero/{name}_v{version}.hrox'
+    hiero_project_publish_area: 'all_job/asset/2d/hiero'
 
 
     ##########################################################################################
