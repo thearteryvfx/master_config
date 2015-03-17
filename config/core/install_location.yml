@@ -4,7 +4,7 @@
 # configuration defined for this project.
 
 Windows: 'V:\SYSTEM\shotgun\conf\v01'
-Darwin: ''
-Linux: ''
+Darwin: '/Volumes/valve02/SYSTEM/shotgun/conf/v01'
+Linux: '/ARTERY/valve02/SYSTEM/shotgun/conf/v01'
 
 # End of file.

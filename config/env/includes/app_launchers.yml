@@ -1,4 +1,4 @@
-includes: [./paths.yml, 'sequences/{Sequence}/{Shot}/sgtk_overrides.yml', 'assets/{sg_asset_type}/{Asset}/sgtk_overrides.yml']
+includes: [./paths.yml, '{Sequence}/{Shot}/sgtk_overrides.yml', 'all_job/asset/{sg_asset_type}/{Asset}/sgtk_overrides.yml']
 launch_3dsmax:
   defer_keyword: ''
   engine: tk-3dsmaxplus
