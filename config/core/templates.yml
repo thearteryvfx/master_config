@@ -484,8 +484,8 @@ paths:
     asset_publish_area_nuke: '@asset_work_area_nuke/publish'
 
     # outputs from the Shotgun Write Node for assets
-    nuke_asset_render:          'all_job//image/{name}/v{version}/{Asset}_{name}_{output}_v{version}.{SEQ}.exr'
-    nuke_asset_render_pub:      '@asset_root/publish/elements/{name}/v{version}/{Asset}_{name}_{output}_v{version}.{SEQ}.exr'
+    nuke_asset_render:          '@asset_root/nuke/image/{name}/v{version}/{Asset}_{name}_{output}_v{version}.{SEQ}.exr'
+    nuke_asset_render_pub:      '@asset_root/image/elements/{name}/{Asset}_{name}_{output}_v{version}.{SEQ}.exr'
 
     # review output
     nuke_asset_render_movie: '@asset_root/review/{Asset}_{name}_{output}_v{version}.mov'
