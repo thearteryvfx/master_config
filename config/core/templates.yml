@@ -155,15 +155,15 @@ paths:
     #
 
     # The location of WIP files
-    hiero_project_work: 'all_job/work/hiero/{name}_v{version}.hrox'
-    hiero_project_work_area: 'all_job/work/hiero'
+    hiero_project_work: '@sequence_root/all_scene/work/hiero/{name}_v{version}.hrox'
+    hiero_project_work_area: '@sequence_root/all_scene/work/hiero'
 
     # The location of backups of WIP files
-    hiero_project_snapshot: 'all_job/work/hiero/snapshots/{name}_v{version}_{timestamp}.hrox'
+    hiero_project_snapshot: '@sequence_root/all_scene/work/hiero/snapshots/{name}_v{version}_{timestamp}.hrox'
 
     # The location of published hiero files
-    hiero_project_publish: 'all_job/asset/2d/hiero/{name}_v{version}.hrox'
-    hiero_project_publish_area: 'all_job/asset/2d/hiero'
+    hiero_project_publish: '@sequence_root/all_scene/work/hiero/publish/{name}_v{version}.hrox'
+    hiero_project_publish_area: '@sequence_root/all_scene/work/hiero/publish'
 
 
     ##########################################################################################
@@ -178,12 +178,12 @@ paths:
     #
     # Flame
     #
-    
+
     flame_segment_clip:      '{Sequence}/{Shot}/image/clip/sources/{segment_name}.clip'
     flame_shot_clip:         '{Sequence}/{Shot}/image/clip/{Shot}.clip'
-    flame_shot_batch:        '{Sequence}/{Shot}/work/batch/{Shot}.v{version}.batch'
-    flame_shot_render_dpx:   '{Sequence}/{Shot}/image/{Step}/{Shot}_v{version_two}/{segment_name}/{segment_name}_{Shot}.v{version_two}.{SEQ}.dpx'
-    flame_shot_render_exr:   '{Sequence}/{Shot}/image/{Step}/{Shot}_v{version_two}/{segment_name}/{segment_name}_{Shot}.v{version_two}.{SEQ}.exr'    
+    flame_shot_batch:        '{Sequence}/{Shot}/work/flame/batch/{Shot}_v{version}.batch'
+    flame_shot_render_dpx:   '{Sequence}/{Shot}/image/[{Step}/]{Shot}_v{version_two}/{segment_name}/{segment_name}_{Shot}_v{version_two}.{SEQ}.dpx'
+    flame_shot_render_exr:   '{Sequence}/{Shot}/image/[{Step}/]{Shot}_v{version_two}/{segment_name}/{segment_name}_{Shot}_v{version_two}.{SEQ}.exr'    
 
     #
     # Photoshop
@@ -197,8 +197,8 @@ paths:
     photoshop_shot_snapshot: '@shot_root/work/ps/snapshots/{Shot}_{name}_v{version}_{timestamp}.psd'
 
     # The location of published files
-    shot_publish_area_photoshop: '@shot_root/asset/2d'
-    photoshop_shot_publish: '@shot_root/asset/2d/{Shot}_{name}_v{version}.psd'
+    shot_publish_area_photoshop: '@shot_root/work/ps/publish'
+    photoshop_shot_publish: '@shot_root/work/ps/publish/{Shot}_{name}_v{version}.psd'
 
     #
     # Maya
@@ -208,7 +208,7 @@ paths:
     shot_work_area_maya: '@shot_root/work/maya'
 
     # define the location of a publish area
-    shot_publish_area_maya: '@shot_root/asset/3d/maya'
+    shot_publish_area_maya: '@shot_root/work/maya/publish'
 
     # The location of WIP files
     maya_shot_work: '@shot_root/work/maya/{Shot}_{name}[_{Step}]_v{version}.{maya_file_extension}'
@@ -217,7 +217,7 @@ paths:
     maya_shot_snapshot: '@shot_root/work/maya/snapshots/{Shot}_{name}[_{Step}]_v{version}_{timestamp}.{maya_file_extension}'
 
     # The location of published maya files
-    maya_shot_publish: '@shot_root/asset/3d/maya/{Shot}_{name}_v{version}.{maya_file_extension}'
+    maya_shot_publish: '@shot_root/work/maya/publish/{Shot}_{name}_v{version}.{maya_file_extension}'
 
 
     #
@@ -228,22 +228,22 @@ paths:
     shot_work_area_houdini: '@shot_root/work/houdini'
 
     # define the location of a publish area
-    shot_publish_area_houdini: '@shot_root/asset/3d/houdini'
+    shot_publish_area_houdini: '@shot_root/work/houdini/publish'
 
     # The location of WIP files
-    houdini_shot_work: '@shot_root/work/houdini/{name}.v{version}.hip'
+    houdini_shot_work: '@shot_root/work/houdini/{name}_v{version}.hip'
 
     # The location of backups of WIP files
-    houdini_shot_snapshot: '@shot_root/work/houdini/snapshots/{name}.v{version}.{timestamp}.hip'
+    houdini_shot_snapshot: '@shot_root/work/houdini/snapshots/{name}_v{version}_{timestamp}.hip'
 
     # The location of published houdini files
-    houdini_shot_publish: '@shot_root/publish/houdini/{name}.v{version}.hip'
+    houdini_shot_publish: '@shot_root/work/houdini/publish/{name}_v{version}.hip'
 
     # Alembic caches
     houdini_shot_work_alembic_cache: '@shot_root/work/houdini/cache/alembic/{name}/v{version}/{Shot}_{name}_v{version}_{node}.abc'
 
     # Rendered images
-    houdini_shot_render: '@shot_root/work/images/{name}/v{version}/{width}x{height}/{Shot}_{name}_v{version}.{SEQ}.exr'
+    houdini_shot_render: '@shot_root/work/images/comp/{name}/v{version}/{width}x{height}/{Shot}_{name}_v{version}.{SEQ}.exr'
 
 
     #
@@ -251,19 +251,19 @@ paths:
     #
 
     # define the location of a work area
-    shot_work_area_max: '@shot_root/work/max'
+    shot_work_area_max: '@shot_root/work/max[/{Step}]'
 
     # define the location of a publish area
-    shot_publish_area_max: '@shot_root/asset/3d/max'
+    shot_publish_area_max: '@shot_root/work/max[/{Step}]/publish'
 
     # The location of WIP files
-    max_shot_work: '@shot_root/work/max/{Shot}_{name}[_{Step}]_v{version}.max'
+    max_shot_work: '@shot_work_area_max/{Shot}_{name}[_{Step}]_v{version}.max'
 
     # The location of backups of WIP files
-    max_shot_snapshot: '@shot_root/work/max/snapshots/{Shot}_{name}[_{Step}]_v{version}_{timestamp}.max'
+    max_shot_snapshot: '@shot_work_area_max/snapshots/{Shot}_{name}[_{Step}]_v{version}_{timestamp}.max'
 
     # The location of published max files
-    max_shot_publish: '@shot_root/asset/3d/max/{Shot}_{name}[_{Step}]_v{version}.max'
+    max_shot_publish: '@shot_publish_area_max/{Shot}_{name}[_{Step}]_v{version}.max'
 
 
     #
@@ -274,7 +274,7 @@ paths:
     shot_work_area_mobu: '@shot_root/work/mobu'
 
     # define the location of a publish area
-    shot_publish_area_mobu: '@shot_root/publish/mobu'
+    shot_publish_area_mobu: '@shot_root/mobu/publish'
 
     # The location of WIP files
     mobu_shot_work: '@shot_root/work/mobu/{name}.v{version}.fbx'
@@ -283,7 +283,7 @@ paths:
     mobu_shot_snapshot: '@shot_root/work/mobu/snapshots/{name}.v{version}.{timestamp}.fbx'
 
     # The location of published maya files
-    mobu_shot_publish: '@shot_root/publish/mobu/{name}.v{version}.fbx'
+    mobu_shot_publish: '@shot_root/work/mobu/publish/{name}.v{version}.fbx'
 
     #
     # Nuke
@@ -299,16 +299,16 @@ paths:
     shot_work_area_nuke: '@shot_root/work/nuke'
 
     # define the location of a publish area
-    shot_publish_area_nuke: '@shot_root/asset/2d/nuke'
+    shot_publish_area_nuke: '@shot_work_area_nuke/publish'
 
     # The location of WIP script files
-    nuke_shot_work: '@shot_root/work/nuke/{Shot}_{name}_v{version}.nk'
+    nuke_shot_work: '@shot_work_area_nuke/{Shot}_{name}_v{version}.nk'
 
     # The location of backups of WIP files
-    nuke_shot_snapshot: '@shot_root/work/nuke/snapshots/{Shot}_{name}_v{version}_{timestamp}.nk'
+    nuke_shot_snapshot: '@shot_work_area_nuke/snapshots/{Shot}_{name}_v{version}_{timestamp}.nk'
 
     # The location of published nuke script files
-    nuke_shot_publish: '@shot_root/asset/2d/nuke/{Shot}_{name}_v{version}.nk'
+    nuke_shot_publish: '@shot_work_area_nuke/publish/{Shot}_{name}_v{version}.nk'
 
 
     # write node outputs
@@ -324,8 +324,8 @@ paths:
     nuke_shot_render_pub_stereo:        '@nk_render_pub_path/@nk_render_name/@nk_render_name_{eye}.{SEQ}.dpx'
 
     # review output
-    shot_quicktime_quick:   '@shot_root/edit/quickdaily/{Shot}_{name}_{iteration}.mov'
-    nuke_shot_render_movie: '@shot_root/edit/cuts/from_artery/{Shot}_{name}_v{version}.mov'
+    shot_quicktime_quick:   '@shot_root/image/qt/{Shot}_{name}_{iteration}.mov'
+    nuke_shot_render_movie: '@shot_root/../all_scene/edit/cuts/from_artery/{Shot}_{name}_v{version}.mov'
 
     #
     # Hiero
@@ -344,16 +344,16 @@ paths:
     shot_work_area_softimage: '@shot_root/work/xsi'
 
     # define the location of a publish area
-    shot_publish_area_softimage: '@shot_root/asset/3d/xsi'
+    shot_publish_area_softimage: '@shot_work_area_softimage/publish'
 
     # The location of WIP files
-    softimage_shot_work: '@shot_root/work/xsi/{name}.v{version}.scn'
+    softimage_shot_work: '@shot_work_area_softimage/{name}_v{version}.scn'
 
     # The location of backups of WIP files
-    softimage_shot_snapshot: '@shot_root/work/xsi/snapshots/{name}.v{version}.{timestamp}.scn'
+    softimage_shot_snapshot: '@shot_work_area_softimage/snapshots/{name}_v{version}_{timestamp}.scn'
 
     # The location of published softimage files
-    softimage_shot_publish: '@shot_root/publish/xsi/{name}.v{version}.scn'
+    softimage_shot_publish: '@shot_publish_area_softimage/{name}_v{version}.scn'
 
 
     ##########################################################################################
@@ -370,21 +370,23 @@ paths:
     #
 
     # The location of WIP files
-    photoshop_asset_work: '@asset_root/work/ps/{name}_v{version}.psd'
+
     asset_work_area_photoshop: '@asset_root/work/ps'
 
+    photoshop_asset_work: '@asset_work_area_photoshop/{name}_v{version}.psd'
+
     # The location of backups of WIP files
-    photoshop_asset_snapshot: '@asset_root/work/photoshop/snapshots/{name}.v{version}.{timestamp}.psd'
+    photoshop_asset_snapshot: '@asset_work_area_photoshop/snapshots/{name}.v{version}.{timestamp}.psd'
 
     # The location of published files
-    asset_publish_area_photoshop: '@asset_root/publish/ps'
-    photoshop_asset_publish: '@asset_root/publish/ps/{name}.v{version}.psd'
+    asset_publish_area_photoshop: '@asset_work_area_photoshop/publish'
+    photoshop_asset_publish: '@asset_publish_area_photoshop/{name}_v{version}.psd'
 
     #
     # Mari
     #
 
-    asset_mari_texture_tif: '@asset_root/publish/mari/{name}_{channel}[_{layer}].v{version}.{UDIM}.tif'
+    asset_mari_texture_tif: '@asset_root/work/mari/publish/{name}_{channel}[_{layer}]_v{version}.{UDIM}.tif'
 
 
     #
@@ -395,16 +397,16 @@ paths:
     asset_work_area_maya: '@asset_root/work/maya'
 
     # define the location of a publish area
-    asset_publish_area_maya: '@asset_root/publish/maya'
+    asset_publish_area_maya: '@asset_work_area_maya/publish'
 
     # The location of WIP files
-    maya_asset_work: '@asset_root/work/maya/{name}.v{version}.ma'
+    maya_asset_work: '@asset_work_area_maya/{name}_v{version}.{maya_file_extension}'
 
     # The location of backups of WIP files
-    maya_asset_snapshot: '@asset_root/work/maya/snapshots/{name}.v{version}.{timestamp}.ma'
+    maya_asset_snapshot: '@asset_work_area_maya/snapshots/{name}_v{version}_{timestamp}.{maya_file_extension}'
 
     # The location of published maya files
-    maya_asset_publish: '@asset_root/publish/maya/{name}_v{version}.ma'
+    maya_asset_publish: '@asset_publish_area_maya/{name}_v{version}.{maya_file_extension}'
 
 
     #
@@ -415,22 +417,22 @@ paths:
     asset_work_area_houdini: '@asset_root/work/houdini'
 
     # define the location of a publish area
-    asset_publish_area_houdini: '@asset_root/publish/houdini'
+    asset_publish_area_houdini: '@asset_work_area_houdini/publish'
 
     # The location of WIP files
-    houdini_asset_work: '@asset_root/work/houdini/{name}.v{version}.hip'
+    houdini_asset_work: '@aasset_work_area_houdini/{name}_v{version}.hip'
 
     # The location of backups of WIP files
-    houdini_asset_snapshot: '@asset_root/work/houdini/snapshots/{name}.v{version}.{timestamp}.hip'
+    houdini_asset_snapshot: '@asset_work_area_houdini/snapshots/{name}.v{version}.{timestamp}.hip'
 
     # The location of published houdini files
-    houdini_asset_publish: '@asset_root/publish/houdini/{name}.v{version}.hip'
+    houdini_asset_publish: '@asset_work_area_houdini/publish/houdini/{name}.v{version}.hip'
 
     # Alembic caches
-    houdini_asset_work_alembic_cache: '@asset_root/work/houdini/cache/alembic/{name}/v{version}/{Asset}_{name}_v{version}_{node}.abc'
+    houdini_asset_work_alembic_cache: '@asset_work_area_houdini/cache/alembic/{name}/v{version}/{Asset}_{name}_v{version}_{node}.abc'
 
     # Rendered images
-    houdini_asset_render: '@asset_root/work/images/{name}/v{version}/{width}x{height}/{Asset}_{name}_v{version}.{SEQ}.exr'
+    houdini_asset_render: '@asset_root/2d/images/{name}/v{version}/{width}x{height}/{Asset}_{name}_v{version}.{SEQ}.exr'
 
 
     #
@@ -441,16 +443,16 @@ paths:
     asset_work_area_max: '@asset_root/work/max'
 
     # define the location of a publish area
-    asset_publish_area_max: '@asset_root/publish/max'
+    asset_publish_area_max: '@asset_work_area_max/publish'
 
     # The location of WIP files
-    max_asset_work: '@asset_root/work/max/{name}_v{version}.max'
+    max_asset_work: '@asset_work_area_max/{name}_v{version}.max'
 
     # The location of backups of WIP files
-    max_asset_snapshot: '@asset_root/work/max/snapshots/{name}.v{version}.{timestamp}.max'
+    max_asset_snapshot: '@asset_work_area_max/snapshots/{name}.v{version}.{timestamp}.max'
 
     # The location of published maya files
-    max_asset_publish: '@asset_root/publish/max/{name}.v{version}.max'
+    max_asset_publish: '@asset_publish_area_max/{name}_v{version}.max'
 
     #
     # Motionbuilder
@@ -460,7 +462,7 @@ paths:
     asset_work_area_mobu: '@asset_root/work/mobu'
 
     # define the location of a publish area
-    asset_publish_area_mobu: '@asset_root/publish/mobu'
+    asset_publish_area_mobu: '@asset_root/work/mobu/publish'
 
     # The location of WIP files
     mobu_asset_work: '@asset_root/work/mobu/{name}.v{version}.fbx'
@@ -469,7 +471,7 @@ paths:
     mobu_asset_snapshot: '@asset_root/work/mobu/snapshots/{name}.v{version}.{timestamp}.fbx'
 
     # The location of published Motionbuilder files
-    mobu_asset_publish: '@asset_root/publish/mobu/{name}.v{version}.fbx'
+    mobu_asset_publish: '@asset_root/work/mobu/publish/mobu/{name}.v{version}.fbx'
 
     #
     # Nuke
@@ -479,7 +481,7 @@ paths:
     asset_work_area_nuke: '@asset_root/work/nuke'
 
     # define the location of a publish area
-    asset_publish_area_nuke: '@asset_root/publish'
+    asset_publish_area_nuke: '@asset_work_area_nuke/publish'
 
     # outputs from the Shotgun Write Node for assets
     nuke_asset_render:          '@asset_root/image/{name}/v{version}/{Asset}_{name}_{output}_v{version}.{SEQ}.exr'
@@ -490,13 +492,13 @@ paths:
     asset_quicktime_quick:   '@asset_root/review/quickdaily/{Asset}_{name}_{iteration}.mov'
 
     # The location of WIP script files
-    nuke_asset_work: '@asset_root/work/nuke/{name}.v{version}.nk'
+    nuke_asset_work: '@asset_publish_area_nuke/{name}_v{version}.nk'
 
     # The location of backups of WIP files
-    nuke_asset_snapshot: '@asset_root/work/nuke/snapshots/{name}.v{version}.{timestamp}.nk'
+    nuke_asset_snapshot: '@asset_publish_area_nuke/snapshots/{name}_v{version}_{timestamp}.nk'
 
     # The location of published nuke script files
-    nuke_asset_publish: '@asset_root/publish/nuke/{name}.v{version}.nk'
+    nuke_asset_publish: '@asset_publish_area_nuke/{name}.v{version}.nk'
 
     #
     # Softimage
