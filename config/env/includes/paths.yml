@@ -108,5 +108,5 @@ softimage_linux: XSI
 # Tweak RV
 #
 rv_mac: /Applications/RV64.app
-rv_win: C:\Program Files\RV\RV64.exe
+rv_win: C:\Program Files\Tweak\RV-4.2.4-64\bin
 rv_linux: rv
