@@ -142,7 +142,7 @@ paths:
 
     shot_root: ./{Sequence}/{Shot}
     #shot_root: ./{Sequence}/{Shot}/{Step}
-    asset_root: ./all_job/asset/{sg_asset_type}/{Asset}
+    asset_root: ./all_job/work/{sg_asset_type}/{Asset}/{Step}
     #asset_root: ./all_job/asset/{sg_asset_type}/{Asset}/{Step}
     sequence_root: ./{Sequence}
 
@@ -313,7 +313,7 @@ paths:
 
     # write node outputs
     nuke_shot_render_jpg:                 '@nk_render_path/@nk_render_pathname/@nk_render_name.{SEQ}.jpg'
-    nuke_shot_render_pub_jpg:             '@nk_render_pub_path/@nk_render_name/@nk_render_name.{SEQ}.jpg'
+    nuke_shot_render_pub_jpg:             '@nk_render_pub_path/@nk_render_pathname/@nk_render_name.{SEQ}.jpg'
 
     nuke_shot_render_mono_exr:            '@nk_render_path/@nk_render_pathname/@nk_render_name.{SEQ}.exr'
     nuke_shot_render_mono_dpx:            '@nk_render_path/@nk_render_pathname/@nk_render_name.{SEQ}.dpx'
@@ -371,7 +371,7 @@ paths:
 
     # The location of WIP files
 
-    asset_work_area_photoshop: '@asset_root/work/ps'
+    asset_work_area_photoshop: '@asset_root/ps'
 
     photoshop_asset_work: '@asset_work_area_photoshop/{name}_v{version}.psd'
 
@@ -386,7 +386,7 @@ paths:
     # Mari
     #
 
-    asset_mari_texture_tif: '@asset_root/work/mari/publish/{name}_{channel}[_{layer}]_v{version}.{UDIM}.tif'
+    asset_mari_texture_tif: '@asset_root/mari/publish/{name}_{channel}[_{layer}]_v{version}.{UDIM}.tif'
 
 
     #
@@ -394,7 +394,7 @@ paths:
     #
 
     # define the location of a work area
-    asset_work_area_maya: '@asset_root/work/maya'
+    asset_work_area_maya: '@asset_root/maya'
 
     # define the location of a publish area
     asset_publish_area_maya: '@asset_work_area_maya/publish'
@@ -414,7 +414,7 @@ paths:
     #
 
     # define the location of a work area
-    asset_work_area_houdini: '@asset_root/work/houdini'
+    asset_work_area_houdini: '@asset_root/houdini'
 
     # define the location of a publish area
     asset_publish_area_houdini: '@asset_work_area_houdini/publish'
@@ -440,7 +440,7 @@ paths:
     #
 
     # define the location of a work area
-    asset_work_area_max: '@asset_root/work/max'
+    asset_work_area_max: '@asset_root/max'
 
     # define the location of a publish area
     asset_publish_area_max: '@asset_work_area_max/publish'
@@ -459,26 +459,26 @@ paths:
     #
 
     # define the location of a work area
-    asset_work_area_mobu: '@asset_root/work/mobu'
+    asset_work_area_mobu: '@asset_root/mobu'
 
     # define the location of a publish area
-    asset_publish_area_mobu: '@asset_root/work/mobu/publish'
+    asset_publish_area_mobu: '@asset_root/mobu/publish'
 
     # The location of WIP files
-    mobu_asset_work: '@asset_root/work/mobu/{name}.v{version}.fbx'
+    mobu_asset_work: '@asset_root/mobu/{name}.v{version}.fbx'
 
     # The location of backups of WIP files
-    mobu_asset_snapshot: '@asset_root/work/mobu/snapshots/{name}.v{version}.{timestamp}.fbx'
+    mobu_asset_snapshot: '@asset_root/mobu/snapshots/{name}.v{version}.{timestamp}.fbx'
 
     # The location of published Motionbuilder files
-    mobu_asset_publish: '@asset_root/work/mobu/publish/mobu/{name}.v{version}.fbx'
+    mobu_asset_publish: '@asset_root/mobu/publish/mobu/{name}.v{version}.fbx'
 
     #
     # Nuke
     #
 
     # define the location of a work area
-    asset_work_area_nuke: '@asset_root/work/nuke'
+    asset_work_area_nuke: '@asset_root/nuke'
 
     # define the location of a publish area
     asset_publish_area_nuke: '@asset_work_area_nuke/publish'
@@ -505,19 +505,19 @@ paths:
     #
 
     # define the location of a work area
-    asset_work_area_softimage: '@asset_root/work/xsi'
+    asset_work_area_softimage: '@asset_root/xsi'
 
     # define the location of a publish area
-    asset_publish_area_softimage: '@asset_root/work/xsi/publish'
+    asset_publish_area_softimage: '@asset_root/xsi/publish'
 
     # The location of WIP files
-    softimage_asset_work: '@asset_root/work/xsi/{name}.v{version}.scn'
+    softimage_asset_work: '@asset_root/xsi/{name}.v{version}.scn'
 
     # The location of backups of WIP files
-    softimage_asset_snapshot: '@asset_root/work/xsi/snapshots/{name}.v{version}.{timestamp}.scn'
+    softimage_asset_snapshot: '@asset_root/xsi/snapshots/{name}.v{version}.{timestamp}.scn'
 
     # The location of published softimage files
-    softimage_asset_publish: '@asset_root/work/xsi/publish/softimage/{name}.v{version}.scn'
+    softimage_asset_publish: '@asset_root/xsi/publish/softimage/{name}.v{version}.scn'
 
 
 #
