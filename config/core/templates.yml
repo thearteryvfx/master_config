@@ -420,7 +420,7 @@ paths:
     asset_publish_area_houdini: '@asset_work_area_houdini/publish'
 
     # The location of WIP files
-    houdini_asset_work: '@aasset_work_area_houdini/{name}_v{version}.hip'
+    houdini_asset_work: '@asset_work_area_houdini/{name}_v{version}.hip'
 
     # The location of backups of WIP files
     houdini_asset_snapshot: '@asset_work_area_houdini/snapshots/{name}.v{version}.{timestamp}.hip'
@@ -484,7 +484,7 @@ paths:
     asset_publish_area_nuke: '@asset_work_area_nuke/publish'
 
     # outputs from the Shotgun Write Node for assets
-    nuke_asset_render:          '@asset_root/image/{name}/v{version}/{Asset}_{name}_{output}_v{version}.{SEQ}.exr'
+    nuke_asset_render:          'all_job//image/{name}/v{version}/{Asset}_{name}_{output}_v{version}.{SEQ}.exr'
     nuke_asset_render_pub:      '@asset_root/publish/elements/{name}/v{version}/{Asset}_{name}_{output}_v{version}.{SEQ}.exr'
 
     # review output
@@ -492,32 +492,32 @@ paths:
     asset_quicktime_quick:   '@asset_root/review/quickdaily/{Asset}_{name}_{iteration}.mov'
 
     # The location of WIP script files
-    nuke_asset_work: '@asset_publish_area_nuke/{name}_v{version}.nk'
+    nuke_asset_work: '@asset_work_area_nuke/{name}_v{version}.nk'
 
     # The location of backups of WIP files
-    nuke_asset_snapshot: '@asset_publish_area_nuke/snapshots/{name}_v{version}_{timestamp}.nk'
+    nuke_asset_snapshot: '@asset_work_area_nuke/snapshots/{name}_v{version}_{timestamp}.nk'
 
     # The location of published nuke script files
-    nuke_asset_publish: '@asset_publish_area_nuke/{name}.v{version}.nk'
+    nuke_asset_publish: '@asset_publish_area_nuke/{name}_v{version}.nk'
 
     #
     # Softimage
     #
 
     # define the location of a work area
-    asset_work_area_softimage: '@asset_root/work/softimage'
+    asset_work_area_softimage: '@asset_root/work/xsi'
 
     # define the location of a publish area
-    asset_publish_area_softimage: '@asset_root/publish/softimage'
+    asset_publish_area_softimage: '@asset_root/work/xsi/publish'
 
     # The location of WIP files
-    softimage_asset_work: '@asset_root/work/softimage/{name}.v{version}.scn'
+    softimage_asset_work: '@asset_root/work/xsi/{name}.v{version}.scn'
 
     # The location of backups of WIP files
-    softimage_asset_snapshot: '@asset_root/work/softimage/snapshots/{name}.v{version}.{timestamp}.scn'
+    softimage_asset_snapshot: '@asset_root/work/xsi/snapshots/{name}.v{version}.{timestamp}.scn'
 
     # The location of published softimage files
-    softimage_asset_publish: '@asset_root/publish/softimage/{name}.v{version}.scn'
+    softimage_asset_publish: '@asset_root/work/xsi/publish/softimage/{name}.v{version}.scn'
 
 
 #
