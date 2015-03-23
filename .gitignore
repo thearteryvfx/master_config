@@ -45,3 +45,4 @@ Temporary Items
 install/
 cache/
 .idea/
+config/core/shotgun.yml
